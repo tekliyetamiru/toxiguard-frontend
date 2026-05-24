@@ -11,7 +11,8 @@ export default function AdminSettings() {
   const [saving, setSaving] = useState(false);
   const [posting, setPosting] = useState(false);
   const [activeTab, setActiveTab] = useState('thresholds');
-  
+  const [announcementTarget, setAnnouncementTarget] = useState('all');
+
   const categories = [
     { key: 'toxic', label: 'Toxic', color: 'red', desc: 'General toxic or harmful content' },
     { key: 'severe_toxic', label: 'Severe Toxic', color: 'rose', desc: 'Extremely harmful or hateful content' },
@@ -45,17 +46,21 @@ export default function AdminSettings() {
   };
 
   const postAnnouncement = async () => {
-    if (!announcement.trim()) return;
-    setPosting(true);
-    try {
-      const newAnn = { message: announcement, date: new Date().toISOString() };
-      const newList = [newAnn, ...announcements];
-      await api.post('/api/admin/announcements', { announcements: newList });
-      setAnnouncements(newList);
-      setAnnouncement('');
-      alert('✅ Announcement posted!');
-    } catch (err) { alert('Failed to post'); }
-    finally { setPosting(false); }
+      if (!announcement.trim()) return;
+      setPosting(true);
+      try {
+        const newAnn = { 
+          message: announcement, 
+          date: new Date().toISOString(),
+          target: announcementTarget 
+        };
+        const newList = [newAnn, ...announcements];
+        await api.post('/api/admin/announcements', { announcements: newList });
+        setAnnouncements(newList);
+        setAnnouncement('');
+        alert('✅ Announcement posted!');
+      } catch (err) { alert('Failed to post'); }
+      finally { setPosting(false); }
   };
 
   const deleteAnnouncement = async (index) => {
@@ -164,7 +169,15 @@ export default function AdminSettings() {
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
               <h2 className="text-xl font-bold mb-2">Post Announcement</h2>
               <p className="text-gray-500 text-sm mb-4">Announcements appear on all user dashboards</p>
-              
+              <select 
+                value={announcementTarget} 
+                onChange={e => setAnnouncementTarget(e.target.value)}
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 mb-3"
+              >
+                <option value="all">📢 All Users</option>
+                <option value="user">👤 Users Only</option>
+                <option value="admin">👑 Admins Only</option>
+              </select>
               <div className="space-y-3 mb-6">
                 <textarea
                   value={announcement}
