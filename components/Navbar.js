@@ -14,7 +14,7 @@ export default function Navbar() {
           <div className="w-9 h-9 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-md">
             <span className="text-white font-bold text-sm">TG</span>
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">ToxiGuard</span>
+          <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">SafeTalk</span>
         </Link>
         <div className="relative">
           {!user ? (

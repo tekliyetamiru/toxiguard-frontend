@@ -56,7 +56,7 @@ export default function Home() {
   // Show loading while checking auth
   if (loading) {
     return (
-      <Layout title="ToxiGuard">
+      <Layout title="SafeTalk">
         <div className="flex justify-center items-center h-64">Loading...</div>
       </Layout>
     );
@@ -66,7 +66,7 @@ export default function Home() {
   if (user) return null;
 
   return (
-    <Layout title="ToxiGuard – AI-Powered Moderation">
+    <Layout title="SafeTalk – AI-Powered Moderation">
       {/* Hero Section with Animated Background */}
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-indigo-100 py-20 md:py-32">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
@@ -79,7 +79,7 @@ export default function Home() {
             >
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-purple-700 to-indigo-700 bg-clip-text text-transparent">
-                  ToxiGuard
+                  SafeTalk
                 </span>
               </h1>
               <p className="text-xl text-gray-700 mt-6 leading-relaxed">
@@ -124,7 +124,7 @@ export default function Home() {
             variants={fadeUp}
             className="text-center mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Try ToxiGuard Now</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Try SafeTalk Now</h2>
             <p className="text-gray-600">Enter any text – we'll analyze it for toxicity in real time.</p>
           </motion.div>
 
@@ -179,7 +179,7 @@ export default function Home() {
                   </div>
                   {demoResult.is_toxic && (
                     <div className="mt-4 p-3 bg-red-50 rounded-lg border border-red-200">
-                      <p className="text-red-700 font-semibold">⚠️ Toxic message detected! ToxiGuard would delete it and warn the sender.</p>
+                      <p className="text-red-700 font-semibold">⚠️ Toxic message detected! SafeTalk would delete it and warn the sender.</p>
                     </div>
                   )}
                 </div>
@@ -235,7 +235,7 @@ export default function Home() {
             className="mt-12 text-center"
           >
             <p className="max-w-2xl mx-auto text-purple-100">
-              ToxiGuard uses a fine‑tuned XLM‑RoBERTa model, trained on thousands of annotated examples. 
+              SafeTalk uses a fine‑tuned XLM‑RoBERTa model, trained on thousands of annotated examples. 
               It detects toxic, severe toxic, obscene, threat, insult, and identity hate categories.
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-6">
@@ -285,7 +285,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-r from-purple-800 to-indigo-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to protect your community?</h2>
-          <p className="text-xl mb-8 text-purple-100">Join hundreds of group admins who trust ToxiGuard.</p>
+          <p className="text-xl mb-8 text-purple-100">Join hundreds of group admins who trust SafeTalk.</p>
           <Link href="/signup" className="inline-block bg-white text-purple-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg transform hover:scale-105">
             Start Free – No Credit Card Required
           </Link>

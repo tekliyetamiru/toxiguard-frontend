@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import { useAuth } from '../context/AuthContext';
 import { useState } from 'react';
 
-export default function Layout({ children, title = 'ToxiGuard' }) {
+export default function Layout({ children, title = 'SafeTalk' }) {
   const { user } = useAuth();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   
@@ -26,7 +26,7 @@ export default function Layout({ children, title = 'ToxiGuard' }) {
             <div className="container mx-auto px-4 py-8">{children}</div>
           </main>
           <footer className="bg-gray-800 text-white text-center py-4 mt-8">
-            <p>&copy; {new Date().getFullYear()} ToxiGuard – AI‑Powered Multilingual Toxicity Detection</p>
+            <p>&copy; {new Date().getFullYear()} SafeTalk – AI‑Powered Multilingual Toxicity Detection</p>
           </footer>
         </>
       ) : (

@@ -22,7 +22,7 @@ export default function SocialIntegrations() {
         <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
           Social Integrations
         </h1>
-        <p className="text-gray-600 mt-2">Connect ToxiGuard to other platforms to expand your moderation reach.</p>
+        <p className="text-gray-600 mt-2">Connect SafeTalk to other platforms to expand your moderation reach.</p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-6">

@@ -245,7 +245,7 @@ export default function Sidebar({ onCollapseChange }) {
               <span className="text-white font-bold text-xs">TG</span>
             </div>
             <span className="text-lg font-bold bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent">
-              ToxiGuard
+              SafeTalk
             </span>
           </Link>
         ) : (
